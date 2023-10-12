@@ -2,10 +2,6 @@ h1{
   color: rgb(40, 112, 255);
 }
 
-img{
-  float: right;
-}
-
 a:link,
 a:visited {
   color: #2188e0;
@@ -83,3 +79,4 @@ nav a:hover {
 #prologue{
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
