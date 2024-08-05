@@ -1,0 +1,83 @@
+h1{
+  color: rgb(40, 112, 255);
+}
+
+a:link,
+a:visited {
+  color: #2188e0;
+  text-decoration: none;
+}
+a:hover {
+  color: #006b57;
+  text-shadow: 0 0 5px #ff0;
+  text-decoration: underline;
+}
+
+i{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#main-nav {
+  background-color: rgb(187, 255, 248);
+  padding: 5px;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  height: 30px;
+}
+
+nav a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  margin: 0px 20px;
+  padding: 0px;
+}
+
+#main-nav.sticky {
+  position: fixed;
+  top: 0;
+}
+.navbarOffsetMargin {
+  padding-top: 45px;
+}
+
+nav a.active {
+  color: #5d4f4f;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+@media
+(prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 11px;
+  }
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
+#prologue{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
