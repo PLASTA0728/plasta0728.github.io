@@ -1,17 +1,21 @@
-function createPopup(){
-    let popupNode = document.querySelector(id);
+// Function to create a popup
+function createPopup(popupId) {
+    let popupNode = document.querySelector(`#${popupId}`);
     let overlay = popupNode.querySelector(".overlay");
-    let closeBtn = popupNode.querySelector(".close-btn");
-    function openPopup(){
+
+    function openPopup() {
         popupNode.classList.add("active");
     }
-    function closePopup(){
-        popupNode.classList.remove("active");
-    }
-    overlay.addEventListener("click", closePopup);
-    closeBtn.addEventListener("click", closePopup);
-    return openPopup;
+
+    overlay.addEventListener("click", () => popupNode.classList.remove("active")); // Close the popup when overlay is clicked
+
+    return openPopup; // Return function to open the popup
 }
 
-let popup = createPopup("popup");
-document.querySelector("#open-popup").addEventListener("click",popup);
+// Loop through all images with the class "open-popup"
+document.querySelectorAll(".open-popup").forEach(image => {
+    let popupId = image.getAttribute("data-popup-id"); // Get the ID of the popup
+    let openPopup = createPopup(popupId); // Create the popup function for this ID
+
+    image.addEventListener("click", openPopup); // Trigger the popup when image is clicked
+});

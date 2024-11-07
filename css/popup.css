@@ -1,78 +1,49 @@
-.center{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+
 
 .popup {
     position: fixed;
-    top: -100vh;
-    left: 0px;
+    top: -100vh; /* Initially off-screen */
+    left: 0;
     width: 100%;
     height: 100%;
+    transition: top 300ms ease-in-out; /* Transition for popup movement */
 }
 
-.popup .overlay{
+.popup .overlay {
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    opacity: 1;
-    transition: opacity 100ms ease-in-out 200ms;
+    background: rgba(0, 0, 0, 0.3); /* Dark background with transparency */
+    opacity: 0; /* Initially transparent */
+    transition: opacity 300ms ease-in-out; /* Transition for opacity */
 }
 
-.popup .popup-content{
+.popup .popup-content {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1.15);
     width: 95%;
-    max-width: 350px;
+    max-width: 450px;
     background: #fff;
     padding: 25px;
-    border-radius: 20px;
-    opacity: 0;
-    box-shadow: 0px 2px 2px 5px rgba(0, 0, 0, 0.05);
-    transition: all 300ms ease-in-out;
+    border-radius: 15px;
+    opacity: 0; /* Initially hidden */
+    box-shadow: 0 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: opacity 300ms ease-in-out, transform 300ms ease-in-out; /* Smooth transition for opacity and transform */
 }
 
-.popup .popup-content h2 {
-    margin: 10px 0px;
-    font-size: 25px;
-    color: #111;
-    text-align: center;
+.popup.active {
+    top: 0; /* Popup becomes visible when 'active' class is added */
 }
 
-.popup .popup-content p{
-    margin: 15px 0px;
-    color: #222;
-    font-size: 16px;
-    text-align: left;
+.popup.active .overlay {
+    opacity: 1; /* Fade in overlay */
 }
 
-.popup .popup-content .close-btn{
-    padding: 10px 20px;
-    border: none;
-    outline: none;
-    font-size: 15px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.popup :active{
-    top: 0px;
-    transition: top 0ms ease-in-out 0ms;
-}
-
-.popup .active .overlay{
-    opacity: 1;
-    transition: all 300ms ease-in-out;
-}
-
-.popup .active .popup-content{
-    transform: translate(-50%,-50%) scale(1);
-    opacity: 1;
+.popup.active .popup-content {
+    transform: translate(-50%, -50%) scale(1); /* Popup content becomes centered */
+    opacity: 1; /* Fade in popup content */
 }
