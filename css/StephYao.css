@@ -15,7 +15,7 @@ a:hover {
 
 a:hover img {
   box-shadow: 0 0 5px #ff0; /* Adds yellow glow around the image */
-  transition: box-shadow 0.3s; /* Smooth transition */
+  transition: box-shadow 0s; /* Smooth transition */
 }
 
 i{
